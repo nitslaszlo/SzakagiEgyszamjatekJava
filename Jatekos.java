@@ -22,7 +22,7 @@ public class Jatekos {
 		return this.Tippek;
 	}
 
-	public int FordulokSzama() {
+	public int getFordulokSzama() {
 		return this.Tippek.length;
 	}
 

@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 public class Egyszamjatek {
 
 	public static void main(String[] args) {
-
 		new Egyszamjatek();
 	}
 
@@ -45,7 +44,7 @@ public class Egyszamjatek {
 
 		p.add(new Label("3. feladat: Jatekosok szama: " + j.size()));
 
-		p.add(new Label("4. feladat: Fordulok szama: " + j.get(0).FordulokSzama()));
+		p.add(new Label("4. feladat: Fordulok szama: " + j.get(0).getFordulokSzama()));
 
 		// 5. feladat:
 		boolean vanEgyesTipp = false;
@@ -68,9 +67,9 @@ public class Egyszamjatek {
 
 		f.pack();
 		String sFordulo = JOptionPane
-				.showInputDialog("7. feladat: Kerem a fordulo sorszamat [1-" + j.get(0).FordulokSzama() + "]");
+				.showInputDialog("7. feladat: Kerem a fordulo sorszamat [1-" + j.get(0).getFordulokSzama() + "]");
 		int iFordulo = Integer.parseInt(sFordulo);
-		if (iFordulo < 1 || iFordulo > j.get(0).FordulokSzama())
+		if (iFordulo < 1 || iFordulo > j.get(0).getFordulokSzama())
 			iFordulo = 1;
 
 		// 8. feladat:

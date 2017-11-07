@@ -14,7 +14,7 @@
     "files.encoding": "windows1252",
     "files.eol": "\r\n",
     "editor.minimap.enabled": false,
-    "java.home": "c:\\Program Files\\Java\\jdk1.8.0_151",
+    "java.home": "c:\\Program Files\\Java\\jdk1.8.0_73",
     "files.exclude": {
         "*.class": true
       }
