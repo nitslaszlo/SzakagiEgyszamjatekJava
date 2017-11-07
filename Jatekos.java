@@ -1,6 +1,6 @@
 package egyszamjatek;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class Jatekos {
 	private String Nev;
