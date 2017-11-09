@@ -81,9 +81,9 @@ public class Egyszamjatek {
 			}
 		}
 		if (nyertesTipp != -1) {
-			p.add(new Label("8. feladat: A nyertes tipp a megadott forduloban: " + nyertesTipp));
+			p.add(new Label("8. feladat: A nyertes tipp a megadott fordulóban: " + nyertesTipp));
 		} else {
-			p.add(new Label("8. feladat: Nem volt egyedi tipp a megadott forduloban."));
+			p.add(new Label("8. feladat: Nem volt egyedi tipp a megadott fordulóban."));
 		}
 
 		String nyertesNeve = "";
@@ -96,12 +96,12 @@ public class Egyszamjatek {
 			}
 			p.add(new Label("9. feladat: A megadott forduló nyertese: " + nyertesNeve));
 		} else {
-			p.add(new Label("9. feladat: Nem volt nyertes a megadott forduloban!"));
+			p.add(new Label("9. feladat: Nem volt nyertes a megadott fordulóban!"));
 		}
 
 		// 10. feladat:
 		if (nyertesTipp != -1) {
-			p.add(new Label("10. feladat: nyertes.txt irasa"));
+			p.add(new Label("10. feladat: nyertes.txt írása"));
 			ArrayList<String> ki = new ArrayList<String>();
 			ki.add("Fordulo sorszama: " + iFordulo);
 			ki.add("Nyertes tipp: " + nyertesTipp);
