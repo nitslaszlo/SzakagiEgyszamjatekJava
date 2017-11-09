@@ -1,4 +1,4 @@
-package egyszamjatek;
+package eu.jedlik.egyszamjatek;
 
 import java.awt.Label;
 import java.nio.file.Files;
@@ -13,15 +13,11 @@ import javax.swing.JPanel;
 
 public class Egyszamjatek {
 
-	public static void main(String[] args) {
-		new Egyszamjatek();
-	}
-
 	public Egyszamjatek() {
 
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setTitle("Egyszamjatek - 2017.10.20");
+		f.setTitle("Egyszámjátek - 2017.10.20");
 		f.setVisible(true);
 
 		JPanel p = new JPanel();
@@ -29,7 +25,7 @@ public class Egyszamjatek {
 		p.setVisible(true);
 		f.add(p);
 
-		p.add(new Label("1. feladat: Adatok beolvasasa"));
+		p.add(new Label("1. feladat: Adatok beolvasása"));
 
 		ArrayList<Jatekos> j = new ArrayList<Jatekos>();
 
@@ -42,9 +38,9 @@ public class Egyszamjatek {
 			JOptionPane.showMessageDialog(f, e.getMessage());
 		}
 
-		p.add(new Label("3. feladat: Jatekosok szama: " + j.size()));
+		p.add(new Label("3. feladat: Játékosok száma: " + j.size()));
 
-		p.add(new Label("4. feladat: Fordulok szama: " + j.get(0).getFordulokSzama()));
+		p.add(new Label("4. feladat: Fordulók száma: " + j.get(0).getFordulokSzama()));
 
 		// 5. feladat:
 		boolean vanEgyesTipp = false;
@@ -54,7 +50,7 @@ public class Egyszamjatek {
 				break;
 			}
 		}
-		p.add(new Label("5. feladat: Az elso forduloban " + (vanEgyesTipp ? "" : "nem") + "volt egyes tipp!"));
+		p.add(new Label("5. feladat: Az első fordulóban " + (vanEgyesTipp ? "" : "nem") + "volt egyes tipp!"));
 
 		//6. feladat:
 		int legnagyobbTipp = j.get(0).getLegnagyobbTipp();
@@ -63,11 +59,11 @@ public class Egyszamjatek {
 				legnagyobbTipp = j.get(i).getLegnagyobbTipp();
 			}
 		}
-		p.add(new Label("6. feladat: A legnagyobb tipp a fordulok soran: " + legnagyobbTipp));
+		p.add(new Label("6. feladat: A legnagyobb tipp a fordulók során: " + legnagyobbTipp));
 
 		f.pack();
 		String sFordulo = JOptionPane
-				.showInputDialog("7. feladat: Kerem a fordulo sorszamat [1-" + j.get(0).getFordulokSzama() + "]");
+				.showInputDialog("7. feladat: Kérem a fordulo sorszámát [1-" + j.get(0).getFordulokSzama() + "]");
 		int iFordulo = Integer.parseInt(sFordulo);
 		if (iFordulo < 1 || iFordulo > j.get(0).getFordulokSzama())
 			iFordulo = 1;
@@ -98,7 +94,7 @@ public class Egyszamjatek {
 					break;
 				}
 			}
-			p.add(new Label("9. feladat: A megadott fordulo nyertese: " + nyertesNeve));
+			p.add(new Label("9. feladat: A megadott forduló nyertese: " + nyertesNeve));
 		} else {
 			p.add(new Label("9. feladat: Nem volt nyertes a megadott forduloban!"));
 		}

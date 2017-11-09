@@ -1,4 +1,4 @@
-package egyszamjatek;
+package eu.jedlik.egyszamjatek;
 
 import java.util.Arrays;
 
