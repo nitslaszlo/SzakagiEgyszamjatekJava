@@ -63,7 +63,7 @@ public class Egyszamjatek {
 
 		f.pack();
 		String sFordulo = JOptionPane
-				.showInputDialog("7. feladat: Kérem a fordulo sorszámát [1-" + j.get(0).getFordulokSzama() + "]");
+				.showInputDialog("7. feladat: Kérem a forduló sorszámát [1-" + j.get(0).getFordulokSzama() + "]");
 		int iFordulo = Integer.parseInt(sFordulo);
 		if (iFordulo < 1 || iFordulo > j.get(0).getFordulokSzama())
 			iFordulo = 1;
@@ -103,9 +103,9 @@ public class Egyszamjatek {
 		if (nyertesTipp != -1) {
 			p.add(new Label("10. feladat: nyertes.txt írása"));
 			ArrayList<String> ki = new ArrayList<String>();
-			ki.add("Fordulo sorszama: " + iFordulo);
+			ki.add("Forduló sorszáma: " + iFordulo);
 			ki.add("Nyertes tipp: " + nyertesTipp);
-			ki.add("Nyertes jatekos: " + nyertesNeve);
+			ki.add("Nyertes játékos: " + nyertesNeve);
 			try {
 				Files.write(Paths.get("nyertes.txt"), ki);
 			} catch (Exception e) {
