@@ -1,0 +1,1 @@
+java -cp SzakagiEgyszamjatekJava-1.0-SNAPSHOT.jar eu.jedlik.SzakagiEgyszamjatekJava.App

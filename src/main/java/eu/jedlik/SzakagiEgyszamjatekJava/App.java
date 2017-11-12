@@ -1,4 +1,4 @@
-package eu.jedlik.egyszamjatek;
+package eu.jedlik.SzakagiEgyszamjatekJava;
 
 public class App 
 {

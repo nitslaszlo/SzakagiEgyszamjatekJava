@@ -1,4 +1,4 @@
-package eu.jedlik.egyszamjatek;
+package eu.jedlik.SzakagiEgyszamjatekJava;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

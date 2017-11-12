@@ -1,23 +1,24 @@
 {
-   // Use IntelliSense to learn about possible attributes.
-   // Hover to view descriptions of existing attributes.
-   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-   "version": "0.2.0",
-   "configurations": [
-      {
-         "type": "java",
-         "name": "Debug (Launch)-App<egyszamjatek>",
-         "request": "launch",
-         "mainClass": "eu.jedlik.egyszamjatek.App",
-         "projectName": "egyszamjatek",
-         "args": ""
-      },
-      {
-         "type": "java",
-         "name": "Debug (Attach)",
-         "request": "attach",
-         "hostName": "localhost",
-         "port": 0
-      }
-   ]
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<SzakagiEgyszamjatekJava>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "eu.jedlik.SzakagiEgyszamjatekJava.App",
+            "projectName": "SzakagiEgyszamjatekJava",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
 }
