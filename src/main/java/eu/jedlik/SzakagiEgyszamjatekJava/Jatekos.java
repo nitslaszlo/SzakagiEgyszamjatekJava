@@ -27,9 +27,7 @@ public class Jatekos {
 	}
 
 	public int getLegnagyobbTipp() {
-		int[] seged = this.Tippek.clone();
-		Arrays.sort(seged);
-		return seged[seged.length - 1];
+		return Arrays.stream(this.Tippek.clone()).max().getAsInt();
 	}
 
 	public int TippFordulo(int fordulo) {

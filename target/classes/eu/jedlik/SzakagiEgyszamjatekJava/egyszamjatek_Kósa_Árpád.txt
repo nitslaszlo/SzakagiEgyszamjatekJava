@@ -1,0 +1,113 @@
+import java.util.*;
+import java.io.*;
+class Jatekos
+{
+int[] tippek = new int[10];//fordulók száma max 10 lehet
+String nev;
+
+}
+public class egyszamjatek
+{
+static Jatekos[] jatekos = new Jatekos[10];//max 10 játékos lehet
+	public static void main( String[] args )
+	{   //int[] szamtomb= new szamtomb[10]
+	    
+		int j=0, meret=0, jatekosSzam=0, forduloXama=0;
+		
+	    
+		try{
+			BufferedReader fajl = new BufferedReader(new FileReader("egyszamjatek.txt"));
+			String sor;//ebbe olvasunk
+			while ((sor = fajl.readLine()) != null) 
+				{
+			    String[] adatok=sor.split(" ");
+				meret=adatok.length;
+				jatekos[j] = new Jatekos();
+			    for (int k = 0;k < meret - 1; k++)     
+                    jatekos[j].tippek[k]=Integer.parseInt(adatok[k]);
+                jatekos[j].nev = adatok[meret-1];     				
+				j++;
+				}   
+			fajl.close();
+			jatekosSzam = j;
+			forduloXama = meret-1;
+			}
+		 catch (IOException e)
+		    { 
+            System.out.println("Ajjajjajj nincs meg a fajl...");
+			}
+		System.out.println("3. feladat: a jatekosok szama: "+jatekosSzam);
+		System.out.println("4. feladat: a fordulok szama: "+forduloXama);
+		boolean voltEgyes=false;
+		for (int i=0;i<jatekosSzam;i++)
+			{
+			if (jatekos[i].tippek[0]==1)
+			    {
+				voltEgyes=true;
+				break;
+				}
+			}
+		if (voltEgyes)
+		    System.out.println("5. feladat: az elso forduloban volt egyes");
+		else
+		    System.out.println("5. feladat: az elso forduloban NEM volt egyes");
+		int max=0;	
+		for (int i=0;i<jatekosSzam;i++)
+			for (j=0;j<forduloXama;j++)
+			     if (jatekos[i].tippek[j]>max)
+                     max=jatekos[i].tippek[j];
+		System.out.println("6. feladat: a legnagyobb tipp: "+max);
+		//7. feladat
+		Scanner keyboard = new Scanner(System.in);
+		int fordSzam = 0;
+		System.out.print( "7. feladat: Kerem a fordulo sorszamat: [1-"+forduloXama+"]" );
+		fordSzam = keyboard.nextInt();
+		//int fordSzam = 3;
+		
+		
+		int sz[] =new int[100]; //ha sz[j]==k akkor a j szám a játékfordulóban k-szor fordul elõ
+		 //Elõször lenullázzuk a tömböt
+		for (int i=0; i<100; i++)
+		    sz[i]=0; 
+		for (int i=0;i<jatekosSzam;i++)
+		    {int szamtipp=jatekos[i].tippek[fordSzam-1];
+		    sz[szamtipp]++;
+			}
+		//végigmegyünk az sz tömbön az 1-es indextõl, és megnézzük, van-e olyan tipp, ami csak 1 x fordult elõ. Az elsõ ilyen (ha van)lesz a nyertes tipp		
+		int nyertesTipp=0;
+		for (int i=1; i<100;i++)	
+			 if (sz[i]==1) 
+			    {
+				nyertesTipp = i;
+                break; 				
+				}
+		if (nyertesTipp>0)	   
+		    System.out.println("7. feladat: A nyertes tipp a megadott forduloban: "+nyertesTipp);
+		else
+		    System.out.println("7. feladat: A megadottt forduloban nem volt nyertes. ");
+		
+		//8. feladat:  a nyertes neve
+		String nyertes="";
+		for (int i=0;i<jatekosSzam;i++)	     
+				if (jatekos[i].tippek[fordSzam-1]==nyertesTipp)
+				    nyertes=jatekos[i].nev;
+		if (nyertes.length()!=0)	   
+			 System.out.println("8. feladat: A megadott fordulo nyertese: "+ nyertes);
+		else
+		     System.out.println("A 8. feladat: a megadott forduloban nem volt nyertes. ");
+		//fájlbaírás:	 
+		if (nyertesTipp>0)		
+		 try {
+			 BufferedWriter fajl = new BufferedWriter(new FileWriter("nyertes.txt"));
+			 fajl.write("Fordulo sorszama: "+fordSzam+"\r\n");
+			 fajl.write("Nyertes tipp: "+nyertesTipp+"\r\n");
+			 fajl.write("Nyertes jatekos: "+nyertes+"\r\n");
+			 fajl.close();
+			 System.out.println("Fajl sikeresen letrehozva...");
+    		 }
+		     catch (IOException e) {
+			   System.out.println("Fajl letrehozasa nem sikerult The system is fucking with you.");
+		     } 
+			 
+	}
+}
