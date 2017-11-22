@@ -2,13 +2,13 @@ import java.util.*;
 import java.io.*;
 class Jatekos
 {
-int[] tippek = new int[10];//fordulÛk sz·ma max 10 lehet
+int[] tippek = new int[10];//fordul√≥k sz√°ma max 10 lehet
 String nev;
 
 }
 public class egyszamjatek
 {
-static Jatekos[] jatekos = new Jatekos[10];//max 10 j·tÈkos lehet
+static Jatekos[] jatekos = new Jatekos[10];//max 10 j√°t√©kos lehet
 	public static void main( String[] args )
 	{   //int[] szamtomb= new szamtomb[10]
 	    
@@ -65,15 +65,15 @@ static Jatekos[] jatekos = new Jatekos[10];//max 10 j·tÈkos lehet
 		//int fordSzam = 3;
 		
 		
-		int sz[] =new int[100]; //ha sz[j]==k akkor a j sz·m a j·tÈkfordulÛban k-szor fordul elı
-		 //Elıszˆr lenull·zzuk a tˆmbˆt
+		int sz[] =new int[100]; //ha sz[j]==k akkor a j sz√°m a j√°t√©kfordul√≥ban k-szor fordul el≈ë
+		 //El≈ësz√∂r lenull√°zzuk a t√∂mb√∂t
 		for (int i=0; i<100; i++)
 		    sz[i]=0; 
 		for (int i=0;i<jatekosSzam;i++)
 		    {int szamtipp=jatekos[i].tippek[fordSzam-1];
 		    sz[szamtipp]++;
 			}
-		//vÈgigmegy¸nk az sz tˆmbˆn az 1-es indextıl, Ès megnÈzz¸k, van-e olyan tipp, ami csak 1 x fordult elı. Az elsı ilyen (ha van)lesz a nyertes tipp		
+		//v√©gigmegy√ºnk az sz t√∂mb√∂n az 1-es indext≈ël, √©s megn√©zz√ºk, van-e olyan tipp, ami csak 1 x fordult el≈ë. Az els≈ë ilyen (ha van)lesz a nyertes tipp		
 		int nyertesTipp=0;
 		for (int i=1; i<100;i++)	
 			 if (sz[i]==1) 
@@ -95,7 +95,7 @@ static Jatekos[] jatekos = new Jatekos[10];//max 10 j·tÈkos lehet
 			 System.out.println("8. feladat: A megadott fordulo nyertese: "+ nyertes);
 		else
 		     System.out.println("A 8. feladat: a megadott forduloban nem volt nyertes. ");
-		//f·jlbaÌr·s:	 
+		//f√°jlba√≠r√°s:	 
 		if (nyertesTipp>0)		
 		 try {
 			 BufferedWriter fajl = new BufferedWriter(new FileWriter("nyertes.txt"));
